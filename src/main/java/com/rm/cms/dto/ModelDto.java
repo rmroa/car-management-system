@@ -46,4 +46,10 @@ public class ModelDto {
 
     @NotNull
     private BigDecimal price;
+
+    public ModelDto(String model, Long currentMileage, BigDecimal price) {
+        this.model = model;
+        this.currentMileage = currentMileage;
+        this.price = price;
+    }
 }

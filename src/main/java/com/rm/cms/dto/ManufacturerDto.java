@@ -1,6 +1,5 @@
 package com.rm.cms.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +8,6 @@ import lombok.Setter;
 import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Setter
 @Getter
 @Builder
@@ -22,4 +20,10 @@ public class ManufacturerDto {
 
     @NotNull
     private String country;
+
+    public ManufacturerDto(Integer id, String brand, String country) {
+        this.id = id;
+        this.brand = brand;
+        this.country = country;
+    }
 }

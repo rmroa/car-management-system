@@ -37,4 +37,10 @@ public class Manufacturer {
 
     @OneToMany(mappedBy = "manufacturer", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Model> models;
+
+    public Manufacturer(Integer id, String brand, String country) {
+        this.id = id;
+        this.brand = brand;
+        this.country = country;
+    }
 }

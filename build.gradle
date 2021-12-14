@@ -30,10 +30,12 @@ dependencies {
     annotationProcessor 'com.querydsl:querydsl-apt:5.0.0'
     annotationProcessor 'org.projectlombok:lombok:1.18.22', 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 
-    testCompileOnly 'org.projectlombok:lombok:1.18.22'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22', 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.7'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.assertj:assertj-core:3.21.0'
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22', 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 }
 
 querydsl {

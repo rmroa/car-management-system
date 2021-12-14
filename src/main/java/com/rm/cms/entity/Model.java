@@ -67,4 +67,10 @@ public class Model {
 
     @NotNull
     private BigDecimal price;
+
+    public Model(String model, Long currentMileage, BigDecimal price) {
+        this.model = model;
+        this.currentMileage = currentMileage;
+        this.price = price;
+    }
 }
