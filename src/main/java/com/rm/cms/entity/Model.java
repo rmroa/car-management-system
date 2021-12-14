@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,6 +28,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Builder
 @Entity
 @Table(name = "models")
+@SQLDelete(sql = "UPDATE models SET deleted = true WHERE id = ?")
+@Where(clause = "deleted = false")
 public class Model {
 
     @Id
@@ -67,6 +71,8 @@ public class Model {
 
     @NotNull
     private BigDecimal price;
+
+    private Boolean deleted = Boolean.FALSE;
 
     public Model(String model, Long currentMileage, BigDecimal price) {
         this.model = model;
