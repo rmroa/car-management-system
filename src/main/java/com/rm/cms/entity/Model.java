@@ -72,7 +72,7 @@ public class Model {
     @NotNull
     private BigDecimal price;
 
-    private Boolean deleted = Boolean.FALSE;
+    private boolean deleted = Boolean.FALSE;
 
     public Model(String model, Long currentMileage, BigDecimal price) {
         this.model = model;

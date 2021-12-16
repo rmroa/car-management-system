@@ -1,7 +1,6 @@
 package com.rm.cms.controller;
 
 import com.rm.cms.dto.ModelDto;
-import com.rm.cms.exception.ApiRequestException;
 import com.rm.cms.service.ModelService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,11 +105,7 @@ public class ModelController {
     @ApiOperation("Saving model")
     @PostMapping("/models")
     public ResponseEntity<ModelDto> saveModel(@RequestBody ModelDto modelDto) {
-        try {
-            return new ResponseEntity<>(modelService.save(modelDto), HttpStatus.CREATED);
-        } catch (RuntimeException e) {
-            throw new ApiRequestException(e.getMessage());
-        }
+        return new ResponseEntity<>(modelService.save(modelDto), HttpStatus.CREATED);
     }
 
     /**
@@ -124,11 +119,7 @@ public class ModelController {
     @PutMapping("/{manufacturerId}/models")
     public ResponseEntity<ModelDto> updateModel(@PathVariable Integer manufacturerId,
                                                 @RequestBody ModelDto modelDto) {
-        try {
-            return new ResponseEntity<>(modelService.update(manufacturerId, modelDto), HttpStatus.OK);
-        } catch (RuntimeException e) {
-            throw new ApiRequestException(e.getMessage());
-        }
+        return new ResponseEntity<>(modelService.update(manufacturerId, modelDto), HttpStatus.OK);
     }
 
     /**
